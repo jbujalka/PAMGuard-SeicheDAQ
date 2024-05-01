@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PAMGuard-SeicheDAQ
+Bundle-SymbolicName: PAMGuard-SeicheDAQ
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: PAMGuard.SeicheDAQ
+Bundle-RequiredExecutionEnvironment: JavaSE-17
