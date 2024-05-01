@@ -5,6 +5,7 @@ import Layout.DisplayPanelContainer;
 import Layout.DisplayPanelProvider;
 import seichedaq.SeicheNetworkDaq;
 import userDisplay.UserDisplayComponent;
+import userDisplay.UserDisplayControl;
 import userDisplay.UserDisplayProvider;
 
 /**
@@ -31,8 +32,8 @@ public class SeicheDisplayProvider implements UserDisplayProvider {
 	}
 
 	@Override
-	public UserDisplayComponent getComponent() {
-		return new SeicheDaqDisplayPanel(seicheNetworkDaq);
+	public UserDisplayComponent getComponent(UserDisplayControl userDisplayControl, String uniqueDisplayName) {
+		return new SeicheDaqDisplayPanel(seicheNetworkDaq, this, uniqueDisplayName);
 	}
 
 	@Override
