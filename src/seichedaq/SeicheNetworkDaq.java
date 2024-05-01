@@ -2,6 +2,7 @@ package seichedaq;
 
 import java.awt.Window;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -453,8 +454,8 @@ public class SeicheNetworkDaq extends DaqSystem implements PamSettings {
 	 * @return byte array of packed data.
 	 */
 	private byte[] writeConfigData() {
-		ByteOutputStream bos;
-		DataOutputStream dos = new DataOutputStream(bos = new ByteOutputStream(36));
+		ByteArrayOutputStream bos;
+		DataOutputStream dos = new DataOutputStream(bos = new ByteArrayOutputStream(36));
 		try {
 			dos.writeByte('S'); // 1
 			dos.writeByte('*');
@@ -478,7 +479,7 @@ public class SeicheNetworkDaq extends DaqSystem implements PamSettings {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return bos.getBytes();
+		return bos.toByteArray();
 	}
 
 	/**

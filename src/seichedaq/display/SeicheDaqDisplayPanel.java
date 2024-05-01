@@ -40,6 +40,8 @@ public class SeicheDaqDisplayPanel implements SlowObserver, UserDisplayComponent
 	private CAPTPanel[] captPanels;
 	
 	private DAQPanel[] daqPanels;
+	
+	private String uniqueName;
 
 	private ArrayList<CAPTGraph> captGraphs = new ArrayList<>();
 	
@@ -52,9 +54,12 @@ public class SeicheDaqDisplayPanel implements SlowObserver, UserDisplayComponent
 	 * @param displayPanelContainer 
 	 * @param seicheDisplayProider 
 	 * @param seicheNetworkDaq
+	 * @param uniqueDisplayName 
+	 * @param seicheDisplayProvider 
 	 */
-	public SeicheDaqDisplayPanel(SeicheNetworkDaq seicheNetworkDaq) {
+	public SeicheDaqDisplayPanel(SeicheNetworkDaq seicheNetworkDaq, SeicheDisplayProvider seicheDisplayProvider, String uniqueDisplayName) {
 		this.seicheNetworkDaq = seicheNetworkDaq;
+		this.uniqueName = uniqueDisplayName;
 		mainPanel = new JPanel(new BorderLayout());
 		generalPanel = new SeicheGeneralPanel(seicheNetworkDaq, this);
 		mainPanel.add(BorderLayout.NORTH, generalPanel.getComponent());
@@ -170,6 +175,24 @@ public class SeicheDaqDisplayPanel implements SlowObserver, UserDisplayComponent
 	public void notifyModelChanged(int changeType) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public String getUniqueName() {
+		return uniqueName;
+	}
+
+
+	@Override
+	public void setUniqueName(String uniqueName) {
+		this.uniqueName = uniqueName;
+	}
+
+
+	@Override
+	public String getFrameTitle() {
+		return "Seiche DAQ";
 	}
 	
 	

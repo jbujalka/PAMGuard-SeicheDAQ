@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/PAMGuard-main"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/PamGuard Main"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
